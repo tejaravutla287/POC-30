@@ -5,9 +5,9 @@ metadata:
   region: us-east-1
   version: "1.30"
 managedNodeGroups:
-  - name: gitops-workers
-    instanceType: t3.medium
-    desiredCapacity: 2
+  - name: free-tier-nodes
+    instanceType: t3.micro      # Free Tier eligible instance type
+    desiredCapacity: 2          # Minimal nodes needed to handle ArgoCD + Nginx
     minSize: 1
-    maxSize: 3
-    volumeSize: 20
+    maxSize: 2
+    volumeSize: 10              # Reduced from 20GB to save on EBS disk costs
