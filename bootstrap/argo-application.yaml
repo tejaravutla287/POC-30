@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gitops-poc-sync
+  name: gitops-helm-sync
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: 'https://github.com<YOUR_GITHUB_USERNAME>/<YOUR_REPO_NAME>.git'
+    repoURL: 'https://github.com/tejaravutla287/POC-30.git'
     targetRevision: HEAD
-    path: app
+    path: app-chart        # ArgoCD auto-detects Chart.yaml here and triggers Helm
   destination:
     server: 'https://default.svc'
     namespace: default
