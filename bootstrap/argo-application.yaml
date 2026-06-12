@@ -6,9 +6,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/tejaravutla287/POC-30.git'
+    repoURL: 'https://github.com'
     targetRevision: HEAD
-    path: app-chart        # ArgoCD auto-detects Chart.yaml here and triggers Helm
+    path: app-chart
   destination:
     server: 'https://default.svc'
     namespace: default
